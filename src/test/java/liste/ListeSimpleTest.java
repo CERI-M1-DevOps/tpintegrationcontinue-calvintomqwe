@@ -45,11 +45,12 @@ class ListeSimpleTest {
 
     @Test
     void toStringDonneTousLesNoeuds() {
-        System.out.println(listeATester);
+        assertEquals("ListeSimple()", listeATester.toString());
         listeATester.ajout(1);
         listeATester.ajout(2);
         listeATester.ajout(3);
-        System.out.println(listeATester);
+        String expected = "ListeSimple(Noeud(3), Noeud(2), Noeud(1))";
+        assertEquals(expected, listeATester.toString());
     }
 
     @Test
@@ -114,9 +115,10 @@ class ListeSimpleTest {
 
     @Test
     void supprimeTousListeVide() {
-        listeATester.supprimePremier(1);
+        listeATester.supprimeTous(1);
         assertNull(listeATester.tete);
         assertEquals(0, listeATester.getSize());
+        assertEquals("ListeSimple()", listeATester.toString());
     }
 
     @Test
