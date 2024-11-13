@@ -64,6 +64,14 @@ class ListeSimpleTest {
     }
 
     @Test
+    public void testModifiePremier_ElementAbsent() {
+        ListeSimple liste = new ListeSimple();
+        liste.ajout(1);
+        liste.modifiePremier(2, 5);
+        assertEquals("ListeSimple(1)", liste.toString());
+    }
+
+    @Test
     void modifieTous() {
         listeATester.ajout(1);
         listeATester.ajout(2);
@@ -111,6 +119,14 @@ class ListeSimpleTest {
         listeATester.supprimePremier(1);
         assertEquals("ListeSimple(Noeud(4), Noeud(3), Noeud(2))", listeATester.toString());
         assertEquals(3, listeATester.getSize());
+    }
+
+    @Test
+    public void testSupprimePremier_ElementAbsent() {
+        ListeSimple liste = new ListeSimple();
+        liste.ajout(1);
+        liste.supprimePremier(2);
+        assertEquals("ListeSimple(1)", liste.toString());
     }
 
     @Test
@@ -241,6 +257,26 @@ class ListeSimpleTest {
         listeATester.echanger(r1, r2);
         System.out.println(listeATester);
         assertEquals("ListeSimple(Noeud(4), Noeud(2), Noeud(3), Noeud(1), Noeud(5))", listeATester.toString());
+    }
+
+    @Test
+    public void testEchanger_MemeNoeud() {
+        ListeSimple liste = new ListeSimple();
+        liste.ajout(1);
+        Noeud noeud = liste.tete;
+        liste.echanger(noeud, noeud);
+        assertEquals("ListeSimple(1)", liste.toString());
+    }
+
+    @Test
+    public void testEchanger_DifferentsAvecR1Tete() {
+        ListeSimple liste = new ListeSimple();
+        liste.ajout(1);
+        liste.ajout(2);
+        Noeud r1 = liste.tete;
+        Noeud r2 = liste.tete.getSuivant();
+        liste.echanger(r1, r2);
+        assertEquals("ListeSimple(1, 2)", liste.toString());
     }
 
     @Test
