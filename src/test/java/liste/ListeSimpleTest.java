@@ -64,7 +64,7 @@ class ListeSimpleTest {
     }
 
     @Test
-    public void testModifiePremier_ElementAbsent() {
+    void testModifiePremier_ElementAbsent() {
         ListeSimple liste = new ListeSimple();
         liste.ajout(1);
         liste.modifiePremier(2, 5);
@@ -122,7 +122,7 @@ class ListeSimpleTest {
     }
 
     @Test
-    public void testSupprimePremier_ElementAbsent() {
+    void testSupprimePremier_ElementAbsent() {
         ListeSimple liste = new ListeSimple();
         liste.ajout(1);
         liste.supprimePremier(2);
@@ -260,7 +260,7 @@ class ListeSimpleTest {
     }
 
     @Test
-    public void testEchanger_MemeNoeud() {
+    void testEchanger_MemeNoeud() {
         ListeSimple liste = new ListeSimple();
         liste.ajout(1);
         Noeud noeud = liste.tete;
@@ -269,7 +269,7 @@ class ListeSimpleTest {
     }
 
     @Test
-    public void testEchanger_DifferentsAvecR1Tete() {
+    void testEchanger_DifferentsAvecR1Tete() {
         ListeSimple liste = new ListeSimple();
         liste.ajout(1);
         liste.ajout(2);
