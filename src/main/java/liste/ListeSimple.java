@@ -8,6 +8,10 @@ public class ListeSimple {
         return size;
     }
 
+    /**
+     * Ajoute un nouvel élément au début de la liste.
+     * @param element l'élément à ajouter.
+     */
     public void ajout(int element) {
         tete = new Noeud(element, tete);
         size++;
@@ -43,6 +47,10 @@ public class ListeSimple {
         return sb.toString();
     }
 
+    /**
+     * Supprime la première occurrence d'un élément donné dans la liste.
+     * @param element l'élément à supprimer.
+     */
     public void supprimePremier(Object element) {
         if (tete != null) {
             if (tete.getElement() == element) {
@@ -80,6 +88,10 @@ public class ListeSimple {
         } else return null;
     }
 
+    /**
+     * Récupère le nœud avant le dernier dans la liste.
+     * @return le nœud avant le dernier, ou null si la liste contient moins de deux éléments.
+     */
     public Noeud getAvantDernier() {
         if (tete == null || tete.getSuivant() == null)
             return null;
