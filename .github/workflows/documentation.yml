@@ -1,18 +1,17 @@
 name: Documentation
 
 on:
-  pull_request:
-    types: [closed]
+  push:
     branches:
-      - "main"
+      - dev
+
+permissions:
+      contents: write
 
 jobs:
   generate-docs:
     name: Générer la documentation avec Maven
-    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
     
     steps:
       - name: Checkout code
