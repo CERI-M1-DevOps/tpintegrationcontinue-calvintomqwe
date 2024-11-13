@@ -68,7 +68,7 @@ class ListeSimpleTest {
         ListeSimple liste = new ListeSimple();
         liste.ajout(1);
         liste.modifiePremier(2, 5);
-        assertEquals("ListeSimple(1)", liste.toString());
+        assertEquals("ListeSimple(Noeud(1))", liste.toString());
     }
 
     @Test
@@ -126,7 +126,7 @@ class ListeSimpleTest {
         ListeSimple liste = new ListeSimple();
         liste.ajout(1);
         liste.supprimePremier(2);
-        assertEquals("ListeSimple(1)", liste.toString());
+        assertEquals("ListeSimple(Noeud(1))", liste.toString());
     }
 
     @Test
@@ -265,7 +265,7 @@ class ListeSimpleTest {
         liste.ajout(1);
         Noeud noeud = liste.tete;
         liste.echanger(noeud, noeud);
-        assertEquals("ListeSimple(1)", liste.toString());
+        assertEquals("ListeSimple(Noeud(1))", liste.toString());
     }
 
     @Test
@@ -276,7 +276,7 @@ class ListeSimpleTest {
         Noeud r1 = liste.tete;
         Noeud r2 = liste.tete.getSuivant();
         liste.echanger(r1, r2);
-        assertEquals("ListeSimple(1, 2)", liste.toString());
+        assertEquals("ListeSimple(Noeud(1), Noeud(2))", liste.toString());
     }
 
     @Test
